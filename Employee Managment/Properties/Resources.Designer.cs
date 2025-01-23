@@ -194,6 +194,16 @@ namespace Employee_Managment.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap undraw_done_checking_ra6c {
+            get {
+                object obj = ResourceManager.GetObject("undraw_done-checking_ra6c", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap undraw_secure_login_m11a {
             get {
                 object obj = ResourceManager.GetObject("undraw_secure-login_m11a", resourceCulture);

@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            btn_Clear = new Button();
+            label6 = new Label();
+            txt_nicNo = new TextBox();
             label1 = new Label();
             btn_delete = new Button();
             txt_username = new TextBox();
@@ -39,22 +42,22 @@
             label5 = new Label();
             label4 = new Label();
             label7 = new Label();
-            label8 = new Label();
+            lbl_mangerCount = new Label();
             label9 = new Label();
             panel4 = new Panel();
-            label6 = new Label();
-            txt_nicNo = new TextBox();
-            panel2 = new Panel();
-            label10 = new Label();
+            ManagerDGV = new DataGridView();
+            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
             panel4.SuspendLayout();
-            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ManagerDGV).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(235, 243, 255);
             panel1.BorderStyle = BorderStyle.Fixed3D;
+            panel1.Controls.Add(btn_Clear);
             panel1.Controls.Add(label6);
             panel1.Controls.Add(txt_nicNo);
             panel1.Controls.Add(label1);
@@ -67,10 +70,42 @@
             panel1.Controls.Add(label5);
             panel1.Controls.Add(label4);
             panel1.ForeColor = Color.Black;
-            panel1.Location = new Point(22, 246);
+            panel1.Location = new Point(43, 33);
             panel1.Name = "panel1";
-            panel1.Size = new Size(362, 535);
+            panel1.Size = new Size(362, 475);
             panel1.TabIndex = 14;
+            panel1.Paint += panel1_Paint;
+            // 
+            // btn_Clear
+            // 
+            btn_Clear.BackColor = Color.Gainsboro;
+            btn_Clear.FlatAppearance.BorderSize = 0;
+            btn_Clear.FlatStyle = FlatStyle.Flat;
+            btn_Clear.ForeColor = Color.Black;
+            btn_Clear.Location = new Point(19, 413);
+            btn_Clear.Name = "btn_Clear";
+            btn_Clear.Size = new Size(309, 44);
+            btn_Clear.TabIndex = 23;
+            btn_Clear.Text = "Clear";
+            btn_Clear.UseVisualStyleBackColor = false;
+            btn_Clear.Click += btn_Clear_Click;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(19, 143);
+            label6.Name = "label6";
+            label6.Size = new Size(115, 23);
+            label6.TabIndex = 21;
+            label6.Text = "User NIC No :";
+            // 
+            // txt_nicNo
+            // 
+            txt_nicNo.Location = new Point(19, 170);
+            txt_nicNo.Name = "txt_nicNo";
+            txt_nicNo.Size = new Size(309, 27);
+            txt_nicNo.TabIndex = 22;
             // 
             // label1
             // 
@@ -87,12 +122,13 @@
             btn_delete.BackColor = Color.Maroon;
             btn_delete.FlatStyle = FlatStyle.Flat;
             btn_delete.ForeColor = Color.White;
-            btn_delete.Location = new Point(19, 465);
+            btn_delete.Location = new Point(183, 360);
             btn_delete.Name = "btn_delete";
-            btn_delete.Size = new Size(309, 43);
+            btn_delete.Size = new Size(145, 43);
             btn_delete.TabIndex = 19;
             btn_delete.Text = "Delete";
             btn_delete.UseVisualStyleBackColor = false;
+            btn_delete.Click += btn_delete_Click;
             // 
             // txt_username
             // 
@@ -106,12 +142,13 @@
             btn_add.BackColor = Color.Green;
             btn_add.FlatStyle = FlatStyle.Flat;
             btn_add.ForeColor = Color.White;
-            btn_add.Location = new Point(19, 415);
+            btn_add.Location = new Point(19, 359);
             btn_add.Name = "btn_add";
-            btn_add.Size = new Size(309, 44);
+            btn_add.Size = new Size(144, 44);
             btn_add.TabIndex = 18;
             btn_add.Text = "Submit";
             btn_add.UseVisualStyleBackColor = false;
+            btn_add.Click += btn_add_Click;
             // 
             // label3
             // 
@@ -169,17 +206,17 @@
             label7.TabIndex = 2;
             label7.Text = "Number Of Employee Mangers \r\n";
             // 
-            // label8
+            // lbl_mangerCount
             // 
-            label8.AutoSize = true;
-            label8.BackColor = Color.Transparent;
-            label8.Font = new Font("Segoe UI Black", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.ForeColor = Color.Navy;
-            label8.Location = new Point(257, 72);
-            label8.Name = "label8";
-            label8.Size = new Size(71, 54);
-            label8.TabIndex = 1;
-            label8.Text = "22";
+            lbl_mangerCount.AutoSize = true;
+            lbl_mangerCount.BackColor = Color.Transparent;
+            lbl_mangerCount.Font = new Font("Segoe UI Black", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbl_mangerCount.ForeColor = Color.Navy;
+            lbl_mangerCount.Location = new Point(257, 72);
+            lbl_mangerCount.Name = "lbl_mangerCount";
+            lbl_mangerCount.Size = new Size(71, 54);
+            lbl_mangerCount.TabIndex = 1;
+            lbl_mangerCount.Text = "22";
             // 
             // label9
             // 
@@ -198,49 +235,34 @@
             panel4.BackColor = Color.FromArgb(235, 243, 255);
             panel4.BorderStyle = BorderStyle.Fixed3D;
             panel4.Controls.Add(label7);
-            panel4.Controls.Add(label8);
+            panel4.Controls.Add(lbl_mangerCount);
             panel4.Controls.Add(label9);
-            panel4.Location = new Point(22, 81);
+            panel4.Location = new Point(429, 33);
             panel4.Name = "panel4";
             panel4.Size = new Size(362, 139);
             panel4.TabIndex = 13;
             // 
-            // label6
+            // ManagerDGV
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(19, 143);
-            label6.Name = "label6";
-            label6.Size = new Size(115, 23);
-            label6.TabIndex = 21;
-            label6.Text = "User NIC No :";
+            ManagerDGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            ManagerDGV.BackgroundColor = Color.White;
+            ManagerDGV.BorderStyle = BorderStyle.Fixed3D;
+            ManagerDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            ManagerDGV.Location = new Point(43, 541);
+            ManagerDGV.Name = "ManagerDGV";
+            ManagerDGV.RowHeadersWidth = 51;
+            ManagerDGV.Size = new Size(1040, 238);
+            ManagerDGV.TabIndex = 17;
             // 
-            // txt_nicNo
+            // pictureBox1
             // 
-            txt_nicNo.Location = new Point(19, 170);
-            txt_nicNo.Name = "txt_nicNo";
-            txt_nicNo.Size = new Size(309, 27);
-            txt_nicNo.TabIndex = 22;
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.Navy;
-            panel2.Controls.Add(label10);
-            panel2.Location = new Point(34, 22);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1085, 34);
-            panel2.TabIndex = 16;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.ForeColor = Color.White;
-            label10.Location = new Point(347, 6);
-            label10.Name = "label10";
-            label10.Size = new Size(323, 23);
-            label10.TabIndex = 0;
-            label10.Text = "Employee Managers Mange Dashboard";
+            pictureBox1.Image = Properties.Resources.undraw_done_checking_ra6c;
+            pictureBox1.Location = new Point(752, 217);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(331, 275);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 18;
+            pictureBox1.TabStop = false;
             // 
             // AdminEmpMangersManage
             // 
@@ -248,7 +270,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1162, 814);
-            Controls.Add(panel2);
+            Controls.Add(pictureBox1);
+            Controls.Add(ManagerDGV);
             Controls.Add(panel1);
             Controls.Add(panel4);
             FormBorderStyle = FormBorderStyle.None;
@@ -259,8 +282,8 @@
             panel1.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)ManagerDGV).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -277,12 +300,13 @@
         private Label label5;
         private Label label4;
         private Label label7;
-        private Label label8;
+        private Label lbl_mangerCount;
         private Label label9;
         private Panel panel4;
         private Label label6;
         private TextBox txt_nicNo;
-        private Panel panel2;
-        private Label label10;
+        private DataGridView ManagerDGV;
+        private PictureBox pictureBox1;
+        private Button btn_Clear;
     }
 }
