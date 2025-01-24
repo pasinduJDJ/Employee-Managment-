@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginPage));
             metroPanel1 = new MetroFramework.Controls.MetroPanel();
             metroPanel2 = new MetroFramework.Controls.MetroPanel();
+            button2 = new Button();
             button1 = new Button();
             label6 = new Label();
             btn_submit = new Button();
@@ -42,7 +43,6 @@
             label2 = new Label();
             label1 = new Label();
             pictureBox1 = new PictureBox();
-            button2 = new Button();
             metroPanel1.SuspendLayout();
             metroPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -101,6 +101,19 @@
             metroPanel2.VerticalScrollbarHighlightOnWheel = false;
             metroPanel2.VerticalScrollbarSize = 10;
             // 
+            // button2
+            // 
+            button2.BackColor = Color.Transparent;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Location = new Point(344, 3);
+            button2.Name = "button2";
+            button2.Size = new Size(55, 29);
+            button2.TabIndex = 10;
+            button2.Text = "Close";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
             // button1
             // 
             button1.BackColor = Color.White;
@@ -108,7 +121,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.Black;
-            button1.Location = new Point(256, 343);
+            button1.Location = new Point(232, 343);
             button1.Name = "button1";
             button1.Size = new Size(67, 36);
             button1.TabIndex = 9;
@@ -120,7 +133,7 @@
             // 
             label6.AutoSize = true;
             label6.BackColor = Color.White;
-            label6.Location = new Point(88, 351);
+            label6.Location = new Point(64, 351);
             label6.Name = "label6";
             label6.Size = new Size(162, 20);
             label6.TabIndex = 8;
@@ -151,9 +164,9 @@
             label5.BackColor = Color.White;
             label5.Location = new Point(74, 189);
             label5.Name = "label5";
-            label5.Size = new Size(141, 20);
+            label5.Size = new Size(77, 20);
             label5.TabIndex = 5;
-            label5.Text = "Username or email :";
+            label5.Text = "Password :";
             // 
             // txt_username
             // 
@@ -168,9 +181,9 @@
             label4.BackColor = Color.White;
             label4.Location = new Point(74, 124);
             label4.Name = "label4";
-            label4.Size = new Size(141, 20);
+            label4.Size = new Size(86, 20);
             label4.TabIndex = 3;
-            label4.Text = "Username or email :";
+            label4.Text = "Username  :";
             // 
             // label3
             // 
@@ -212,19 +225,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.Transparent;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Location = new Point(344, 3);
-            button2.Name = "button2";
-            button2.Size = new Size(55, 29);
-            button2.TabIndex = 10;
-            button2.Text = "Close";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
             // 
             // LoginPage
             // 

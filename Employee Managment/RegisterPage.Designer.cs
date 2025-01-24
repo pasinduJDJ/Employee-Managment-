@@ -34,15 +34,9 @@
             label1 = new Label();
             metroPanel2 = new MetroFramework.Controls.MetroPanel();
             button2 = new Button();
-            cmb_position = new ComboBox();
             label7 = new Label();
             button1 = new Button();
             label6 = new Label();
-            btn_submit = new Button();
-            txt_password = new TextBox();
-            label5 = new Label();
-            txt_username = new TextBox();
-            label4 = new Label();
             label3 = new Label();
             panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -85,15 +79,9 @@
             // 
             metroPanel2.BackColor = Color.MidnightBlue;
             metroPanel2.Controls.Add(button2);
-            metroPanel2.Controls.Add(cmb_position);
             metroPanel2.Controls.Add(label7);
             metroPanel2.Controls.Add(button1);
             metroPanel2.Controls.Add(label6);
-            metroPanel2.Controls.Add(btn_submit);
-            metroPanel2.Controls.Add(txt_password);
-            metroPanel2.Controls.Add(label5);
-            metroPanel2.Controls.Add(txt_username);
-            metroPanel2.Controls.Add(label4);
             metroPanel2.Controls.Add(label3);
             metroPanel2.CustomBackground = false;
             metroPanel2.HorizontalScrollbar = false;
@@ -125,23 +113,18 @@
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
-            // cmb_position
-            // 
-            cmb_position.FormattingEnabled = true;
-            cmb_position.Location = new Point(74, 140);
-            cmb_position.Name = "cmb_position";
-            cmb_position.Size = new Size(263, 28);
-            cmb_position.TabIndex = 13;
-            // 
             // label7
             // 
             label7.AutoSize = true;
             label7.BackColor = Color.White;
-            label7.Location = new Point(74, 110);
+            label7.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.Firebrick;
+            label7.Location = new Point(12, 172);
             label7.Name = "label7";
-            label7.Size = new Size(101, 20);
+            label7.Size = new Size(377, 50);
             label7.TabIndex = 12;
-            label7.Text = "User Position :";
+            label7.Text = "If Your Wanna Register This System Please \r\nContac Admin";
+            label7.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // button1
             // 
@@ -168,58 +151,12 @@
             label6.TabIndex = 8;
             label6.Text = "If you Have an Account ?";
             // 
-            // btn_submit
-            // 
-            btn_submit.BackColor = Color.Navy;
-            btn_submit.ForeColor = Color.White;
-            btn_submit.Location = new Point(118, 294);
-            btn_submit.Name = "btn_submit";
-            btn_submit.Size = new Size(141, 35);
-            btn_submit.TabIndex = 7;
-            btn_submit.Text = "Submit";
-            btn_submit.UseVisualStyleBackColor = false;
-            btn_submit.Click += btn_submit_Click;
-            // 
-            // txt_password
-            // 
-            txt_password.Location = new Point(74, 250);
-            txt_password.Name = "txt_password";
-            txt_password.Size = new Size(263, 27);
-            txt_password.TabIndex = 6;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.White;
-            label5.Location = new Point(74, 227);
-            label5.Name = "label5";
-            label5.Size = new Size(141, 20);
-            label5.TabIndex = 5;
-            label5.Text = "Username or email :";
-            // 
-            // txt_username
-            // 
-            txt_username.Location = new Point(74, 194);
-            txt_username.Name = "txt_username";
-            txt_username.Size = new Size(263, 27);
-            txt_username.TabIndex = 4;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.White;
-            label4.Location = new Point(74, 171);
-            label4.Name = "label4";
-            label4.Size = new Size(141, 20);
-            label4.TabIndex = 3;
-            label4.Text = "Username or email :";
-            // 
             // label3
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.White;
             label3.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(151, 45);
+            label3.Location = new Point(141, 78);
             label3.Name = "label3";
             label3.Size = new Size(120, 38);
             label3.TabIndex = 2;
@@ -264,13 +201,7 @@
         private Label label7;
         private Button button1;
         private Label label6;
-        private Button btn_submit;
-        private TextBox txt_password;
-        private Label label5;
-        private TextBox txt_username;
-        private Label label4;
         private Label label3;
-        private ComboBox cmb_position;
         private Panel panel1;
         private Button button2;
     }
